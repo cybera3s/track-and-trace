@@ -30,3 +30,7 @@ def weather_data_retrieval(hours: int = 2):
             location.save()
             print(f"{location.country_name}, {location.city_name} updated! > {weather_data}")
 
+
+@shared_task
+def sample_task():
+    print("The sample task just ran.")
