@@ -1,0 +1,18 @@
+# Virtualenv
+.venv/
+
+# IDE
+.idea
+.vscoed
+
+# env
+.env
+
+# database
+*.sqlite3
+
+# python cache
+__pycache__
+
+# Extra config file
+.flake8
