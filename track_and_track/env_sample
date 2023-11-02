@@ -1,0 +1,11 @@
+DEBUG=on or off
+SECRET_KEY=some super secret key
+
+# general
+SITE_NAME=website name
+
+# OpenWeather
+OPEN_WEATHER_API_KEY=API KEY from openweather website
+
+# Celery
+CELERY_BROKER_URL=broker url for celery
