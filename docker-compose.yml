@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: "api"
+    restart: always
+    build: "./track_and_trace"
+    volumes:
+      - ./track_and_trace:/app
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - "./track_and_trace/.env"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    container_name: "redis"
+
+  celery:
+    container_name: "celery"
+    restart: always
+    build: "./track_and_trace"
+    command: celery -A config worker -l info
+    volumes:
+      - ./track_and_trace:/app
+    env_file:
+      - "./track_and_trace/.env"
+    depends_on:
+      - redis
+
+  celery_beat:
+    container_name: "celery_beat"
+    restart: always
+    build: "./track_and_trace"
+    command: celery -A config beat -l info
+    volumes:
+      - ./track_and_trace:/app
+    env_file:
+      - "./track_and_trace/.env"
+    depends_on:
+      - redis
