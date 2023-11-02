@@ -32,6 +32,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third Party
+    "rest_framework",
+    "drf_yasg",
+    "django_filters",
     # Local apps
     "core.apps.CoreConfig",
     "tracking.apps.TrackingConfig",
