@@ -147,6 +147,6 @@ CELERY_BEAT_SCHEDULE = {
     },
     "sample_task": {
         "task": "tracking.tasks.sample_task",
-        "schedule": crontab(minute="*/1"),
+        "schedule": crontab(minute="*"),
     },
 }
