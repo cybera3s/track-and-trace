@@ -119,6 +119,9 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# custom user model
+AUTH_USER_MODEL = "core.User"
+
 # general
 SITE_NAME = env("SITE_NAME")
 
