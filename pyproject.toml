@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "trace-and-trace"
+version = "0.1.0"
+description = "Tracking API"
+authors = ["ario <cybera.3s@gmail.com>"]
+readme = "README.md"
+packages = [{include = "trace_and_trace"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.web.dependencies]
+django = "^4.2.7"
+djangorestframework = "^3.14.0"
+drf-yasg = "^1.21.7"
+redis = "^5.0.1"
+requests = "^2.31.0"
+django-environ = "^0.11.2"
+celery = "^5.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
