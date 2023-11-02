@@ -1,5 +1,4 @@
 from rest_framework.serializers import ModelSerializer
-from rest_framework import serializers
 
 # local imports
 from .models import Shipment, Location
@@ -7,6 +6,7 @@ from .models import Shipment, Location
 
 class LocationSerializer(ModelSerializer):
     """This class used to serialize the Location model"""
+
     class Meta:
         model = Location
         fields = (

@@ -9,7 +9,10 @@ def get_weather_data(city_name) -> dict:
     :return: dict of weather data
     """
     api_key: str = settings.OPEN_WEATHER_API_KEY
-    url: str = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
+    url: str = (
+        f"https://api.openweathermap.org/data/2.5/weather?q="
+        f"{city_name}&appid={api_key}"
+    )
 
     response = requests.get(url)
     return response.json()

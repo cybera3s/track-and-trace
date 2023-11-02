@@ -23,5 +23,5 @@ class BaseAdmin(admin.ModelAdmin):
         "delete_timestamp",
         "deleted_at",
         "is_deleted",
-        "is_active"
+        "is_active",
     )

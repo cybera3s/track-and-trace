@@ -1,7 +1,5 @@
 from django.db.models import signals
-from unittest.mock import patch, MagicMock
 
-from tracking import weather_service
 from tracking.models import Location
 
 

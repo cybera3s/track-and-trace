@@ -21,8 +21,9 @@ class Location(BaseModel):
     """This class used to represent the address"""
 
     line1 = models.CharField(max_length=100, verbose_name=_("line 1"))
-    city_name = models.CharField(max_length=100, verbose_name=_("city name"),
-                                 unique=True)
+    city_name = models.CharField(
+        max_length=100, verbose_name=_("city name"), unique=True
+    )
     country_name = models.CharField(
         max_length=100, verbose_name=_("country name")
     )
@@ -34,7 +35,10 @@ class Location(BaseModel):
         verbose_name_plural = _("locations")
 
     def __str__(self):
-        return f"{self.line1}, {self.zip_code} {self.city_name}, {self.country_name}"
+        return (
+            f"{self.line1}, {self.zip_code} {self.city_name}, "
+            f"{self.country_name}"
+        )
 
     @classmethod
     def from_address(cls, address: str) -> "Location":

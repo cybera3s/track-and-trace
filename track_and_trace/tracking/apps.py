@@ -1,5 +1,4 @@
 from django.apps import AppConfig
-from django.db.models.signals import post_save
 
 
 class TrackingConfig(AppConfig):
@@ -7,4 +6,4 @@ class TrackingConfig(AppConfig):
     name = "tracking"
 
     def ready(self):
-        from . import signals
+        from . import signals  # NOQA: F401

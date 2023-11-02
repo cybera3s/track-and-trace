@@ -1,10 +1,6 @@
-import time
-from django.db import connections
-from django.db.utils import OperationalError
 from django.core.management.base import BaseCommand
 from pathlib import Path
 import csv
-from django.db import IntegrityError
 
 # local imports
 from tracking.models import Shipment, StatusOptions, Location
@@ -27,9 +23,10 @@ class Command(BaseCommand):
             reader = csv.DictReader(f)
 
             for row in reader:
-
                 sender_location = Location.from_address(row["sender_address"])
-                receiver_location = Location.from_address(row["receiver_address"])
+                receiver_location = Location.from_address(
+                    row["receiver_address"]
+                )
 
                 shipment = Shipment.objects.create(
                     tracking_number=row["tracking_number"],

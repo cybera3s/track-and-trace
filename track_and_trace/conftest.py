@@ -48,7 +48,7 @@ def shipment1(location1, location2) -> Shipment:
         article_quantity=1,
         article_price=123,
         sku="sku1",
-        status=StatusOptions.IN_TRANSIT
+        status=StatusOptions.IN_TRANSIT,
     )
 
 
@@ -63,7 +63,7 @@ def shipment2(location1, location2) -> Shipment:
         article_quantity=3,
         article_price=321,
         sku="sku2",
-        status=StatusOptions.IN_TRANSIT
+        status=StatusOptions.IN_TRANSIT,
     )
 
 

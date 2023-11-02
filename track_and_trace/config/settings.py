@@ -142,7 +142,7 @@ CELERY_BROKER_URL = env.cache_url("CELERY_BROKER_URL")
 CELERY_BEAT_SCHEDULE = {
     "retrieve_weather_data": {
         "task": "tracking.tasks.weather_data_retrieval",
-        'args': (2, ),
+        "args": (2,),
         "schedule": crontab(minute="1", hour="2"),
     },
     "sample_task": {
